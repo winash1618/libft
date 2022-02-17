@@ -11,80 +11,46 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <unistd.h>
-// #include <stdlib.h>
-// #include <stdio.h>
-// #include "ft_calloc.c"
-// #include "ft_bzero.c"
 
-int intlen(int n)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
-	while (n)
+	while (src[i] != '\0')
 	{
-		n /= 10;
+		dst[i] = src[i];
 		i++;
+		dst[i] = '\0';
 	}
-	return (i);
+	return (dst);
 }
 
-// char *strrev(char *s, int i)
-// {
-// 	int j;
-// 	char *str;
+char	*ft_itoa(int num)
+{
+	char	*s;
 
-// 	j = 0;
-// 	i--;
-// 	str = (char *)ft_calloc(i, sizeof(char));
-// 	while (i >= 0)
-// 	{
-// 		if (s[i] != '\0')
-// 		{
-// 			str[j++] = s[i]; 
-// 		}
-// 		i--;
-// 	}
-// 	str[j] = '\0';
-// 	return (str);
-// }
-
-// char *ft_itoa(int n)
-// {
-// 	char *str;
-// 	int i;
-// 	int j;
-// 	int k;
-	
-// 	j = 0;
-// 	k = 0;
-// 	i = intlen(n) + 2;
-// 	str = (char *)ft_calloc(i, sizeof(char));
-// 	if (!str)
-// 		return (NULL);
-// 	if (!n)
-// 		*str = '0';
-// 	if (n < 0)
-// 	{
-// 		str[i - 2] = '-';
-// 	}
-// 	while (n)
-// 	{
-// 		k = n % 10;
-// 		if(k < 0)
-// 			k = -k;
-// 		str[j++] = k + '0';
-// 		n /= 10;
-// 	}
-// 	return (strrev(str, i));
-// }
-
-// int main ()
-// {
-// 	char *i1 = ft_itoa(0);
-// 	printf("%s", i1);
-// }
-
-
+	s = (char *)malloc(sizeof(char) * 2);
+	if (!s)
+		return (NULL);
+	if (num == -2147483648)
+	{
+		s = (char *)malloc(sizeof(char) * 12);
+		return (ft_strcpy(s, "-2147483648"));
+	}
+	if (num < 0)
+	{
+		s[0] = '-';
+		s[1] = '\0';
+		s = ft_strjoin(s, ft_itoa(-num));
+	}
+	else if (num >= 10)
+		s = ft_strjoin(ft_itoa(num / 10), ft_itoa(num % 10));
+	else if (num < 10 && num >= 0)
+	{
+		s[0] = num + '0';
+		s[1] = '\0';
+	}
+	return (s);
+}
 
