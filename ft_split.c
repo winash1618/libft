@@ -11,129 +11,66 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <unistd.h>
-// #include <stdio.h>
-// #include "ft_strlen.c"
 
-int how_many_words(char const *s, char c)
+int	count(char const *s, char c)
 {
-	int count;
-	int re;
-	int k;
-
-	k = 1;
-	count = 0;
-	re = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			if (k == 1)
-			{
-				count++;
-				k = 0;
-			}
-		}
-		else if (*s == c)
-		{
-			k = 1;
-		}
-		s++;
-		re++;
-	}
-	s = s - re;
-	return (count);
-}
-
-void ft_splitter(char const *s, char c, char **ptr)
-{
-	int count;
-	int i;
-	int j;
-	int k;
-
-	count = 0;
-	i = 0;
-	j = 0;
-	k = 0;
-	while (s[k])
-	{
-		if (s[k] != c)
-		{
-			if (count == 1)
-			{
-				j = 0;
-				i++;
-				count = 0;
-			}
-			ptr[i][j] = s[k];
-			j++;
-		}
-		else if (s[k] == c && k > 0)
-		{
-			if (s[k-1] != c)	
-			{
-				count = 1;
-			}
-		}
-		k++;
-	}
-}
-
-char **ft_split(char const *s, char c)
-{
-	char	**ptr;
-	int		i;
-	int		count;
+	int	i;
+	int	l;
 
 	i = 0;
-	count = how_many_words(s, c);
-
-	ptr = (char **) ft_calloc(count + 1, sizeof(char *));
-	if (!count)
-		return ((char*[1]){((void *)0)});
-	if (!ptr)
-		return (NULL);
-	while (i < count)
+	l = 0;
+	while (s[i])
 	{
-		ptr[i] = (char *)ft_calloc(ft_strlen(s), sizeof(char));
+		if (i == 0 && s[i] != c)
+			l++;
+		if (s[i] == c && s[i + 1] != c && s[i + 1])
+			l++;
 		i++;
 	}
-	ft_splitter(s, c, ptr);
-	return (ptr);
+	return (l);
 }
-// void	ft_print_result(char const *s)
-// {
-// 	int		len;
 
-// 	len = 0;
-// 	while (s[len])
-// 		len++;
-// 	write(1, s, len);
-// }
+char	**splitter(char const *s, char c, char **str, int *i)
+{
+	while (i[0] < i[4])
+	{
+		i[1] = 0;
+		while (s[i[2]] == c && s[i[2]])
+			i[2]++;
+		while (s[i[2]] != c && s[i[2]])
+		{
+			i[1]++;
+			i[2]++;
+		}
+		str[i[0]] = (char *)malloc(sizeof(char) * (i[1] + 1));
+		i[2] -= i[1];
+		i[3] = 0;
+		while (s[i[2]] != c && s[i[2]])
+		{
+			str[i[0]][i[3]] = s[i[2]];
+			i[3]++;
+			i[2]++;
+		}
+		str[i[0]++][i[3]] = '\0';
+	}
+	str[i[0]] = 0;
+	return (str);
+}
 
-// int main ()
-// {
-// 	char	**tabstr;
-// 	int i = 0;
-// 		if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
-// 			ft_print_result("NULL");
-// 		else
-// 		{
-// 			while (tabstr[i] != NULL)
-// 			{
-// 				ft_print_result(tabstr[i]);
-// 				write(1, "\n", 1);
-// 				i++;
-// 			}
-// 		}
-// }
-// int main(void)
-// {
-// 	char s1[] = "                  ";
-// 	char c = ' ';
-// 	char **ptr;
-// 	printf("%d", how_many_words(s1, c));
+char	**ft_split(char const *s, char c)
+{
+	char	**str;
+	int		i[5];
+	int		j;
 
-// 	return (0);
-// }
+	j = 0;
+	while (j < 5)
+		i[j++] = 0;
+	if (!s)
+		return (NULL);
+	i[4] = count(s, c);
+	str = (char **) malloc(sizeof(*str) * (i[4] + 1));
+	if (!str)
+		return (NULL);
+	return (splitter(s, c, str, i));
+}
