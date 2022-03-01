@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 09:36:15 by mkaruvan          #+#    #+#             */
-/*   Updated: 2021/12/27 12:47:00 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/03/01 07:33:37 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int	count;
+	int				count;
 	unsigned int	sum;
 
 	count = 1;

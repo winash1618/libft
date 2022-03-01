@@ -6,13 +6,13 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 11:32:39 by mkaruvan          #+#    #+#             */
-/*   Updated: 2021/12/31 08:19:23 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/03/01 07:40:56 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:11:09 by mkaruvan          #+#    #+#             */
-/*   Updated: 2021/12/31 08:56:15 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/03/01 07:45:25 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_memcpy(str, s1, count1);
 	ft_memcpy(str + count1, s2, count2);
-	return str;
+	return (str);
 }
