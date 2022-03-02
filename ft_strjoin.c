@@ -6,7 +6,7 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:11:09 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/03/01 07:45:25 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/03/01 10:34:29 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		count1;
 	int		count2;
 
+	if (!s1 || !s2)
+		return (NULL);
 	count1 = ft_strlen(s1);
 	count2 = ft_strlen(s2);
 	str = (char *) ft_calloc((count1 + count2 + 1), sizeof(char));
