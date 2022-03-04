@@ -6,13 +6,13 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 10:36:02 by mkaruvan          #+#    #+#             */
-/*   Updated: 2021/12/27 11:02:52 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/03/02 07:41:53 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	isneedle(const char *haystack, const char *needle, size_t len)
+static size_t	isneedle(const char *haystack, const char *needle, size_t len)
 {
 	int		c;
 	size_t	count1;

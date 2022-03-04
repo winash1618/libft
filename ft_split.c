@@ -6,13 +6,13 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 09:01:12 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/01/02 09:56:50 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/03/02 07:40:13 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count(char const *s, char c)
+static int	count(char const *s, char c)
 {
 	int	i;
 	int	l;
@@ -30,7 +30,7 @@ int	count(char const *s, char c)
 	return (l);
 }
 
-char	**splitter(char const *s, char c, char **str, int *i)
+static char	**splitter(char const *s, char c, char **str, int *i)
 {
 	while (i[0] < i[4])
 	{

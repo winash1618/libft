@@ -6,13 +6,13 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:13:51 by mkaruvan          #+#    #+#             */
-/*   Updated: 2022/03/01 10:16:26 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/03/02 07:39:37 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_len(int num)
+static int	num_len(int num)
 {
 	int	i;
 

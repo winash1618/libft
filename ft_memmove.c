@@ -6,30 +6,11 @@
 /*   By: mkaruvan <mkaruvan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:45:53 by mkaruvan          #+#    #+#             */
-/*   Updated: 2021/12/27 08:20:09 by mkaruvan         ###   ########.fr       */
+/*   Updated: 2022/03/02 07:39:55 by mkaruvan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// void	*ft_memcpy(void *dst, const void *src, size_t n)
-// {
-// 	unsigned char* k;
-// 	unsigned const char* m;
-// 	size_t count;
-
-// 	count = 0;
-// 	k = dst;
-// 	m = src;
-// 	while (n)
-// 	{
-// 		*k++ = *m++;
-// 		count++;
-// 		n--;
-// 	}
-// 	m = m - count;
-// 	return (k - count);
-// }
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
